@@ -10,7 +10,7 @@ PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 class HamppGuiApp:
 
-    workLock = False
+    workLock = False  # This is a bool that indicates whether something is working
 
     def __init__(self, master=None):
         # 1. Set up gui
@@ -74,7 +74,7 @@ class HamppGuiApp:
         :param op: Specifies the type of operation
         :return: None
         """
-        if op == 'teach':
+        if op == 'teach' and self.workLock == False:
             self.workLock = True
             work = th(self.buy())
             try:
@@ -93,9 +93,8 @@ class HamppGuiApp:
         try:
             if os.path.isfile('list'):
                 with open('list') as file:
-                    cryptos = file.read().split('\n')
+                    cryptos = file.read().split('\n')  # Read the file and divide the text by \n 
                     cryptos.remove('')  # Remove empty elements if they appear
-                    size = len(cryptos)
                     return cryptos  # Return the list and the number of elements within it
 
             else:
@@ -134,7 +133,7 @@ class HamppGuiApp:
         
         :return: None
         """
-        stuff = self.getInfo()
+        stuff = self.getInfo()  # In working case, stuff will contain money at 0 and howMany at 1
         if stuff == 'FUK':
             self.workLock = False
             return
@@ -142,15 +141,15 @@ class HamppGuiApp:
         howMany = stuff[1]
         money = stuff[0]
 
-        cryptoList = self.cryptos
-        size = len(cryptoList)
+        cryptoList = self.cryptos  # Acquire the crypto list
+        size = len(cryptoList)  # Determine size of list
         response = ''  # This holds the string that will be pushed to the guidance window upon function end
 
-        if howMany > size:
+        if howMany > size:  # If user wants more cryptos than is in list
             response += 'You asked to select more cryptos than I know about. I\'ll choose 5 instead.\n'
             howMany = 5
 
-        elif howMany < 1:
+        elif howMany < 1:  # If user doesn't want to invest 
             response += 'If you didn\'t want to invest, why bother asking?\n'
             self.setText(self.guidance, response)
             self.workLock = False  # Release worklock
@@ -165,9 +164,9 @@ class HamppGuiApp:
 
         for x in range(howMany):  # Depending on how many you want, select that many.
             while True:  # Keep on trying until a unique crypto is selected (avoid doubletap)
-                selection = cryptoList[randbelow(size)]
+                selection = cryptoList[randbelow(size)]  # Randomly select a crypto
                 if not selection in portfolio:
-                    portfolio.append(selection)
+                    portfolio.append(selection)  # If the crypto hasn't already been selected, append it to portfolio list
                     break
 
                 else:
@@ -185,7 +184,7 @@ class HamppGuiApp:
         This sets text of textbox.
 
         :param text: What you want to display
-        :param where: tkEntry object ; 'password' = password textbox.
+        :param where: tkEntry object
         :return: None
         """
         where.config(state='normal')
