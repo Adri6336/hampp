@@ -86,7 +86,8 @@ class HamppGuiApp:
 
     def getList(self):
         """
-        This function generates a list of cryptos based on whatever file is called "list"
+        This function generates a list of cryptos based on whatever file is called "list".
+        
         :return: List of strings (crypto names)
         """
         try:
@@ -104,6 +105,13 @@ class HamppGuiApp:
             return 'FUK'
 
     def getInfo(self):
+        """
+        This function gets the text from the entries and converts to it to floats and ints if possible.
+        
+        :return: None
+        
+        """
+        
         try:
             money = self.money_entry.get()
             money = float(money)
@@ -121,6 +129,11 @@ class HamppGuiApp:
         return (money, howMany)
 
     def buy(self):
+        """
+        This function provides financial advice using pseudorandom number generators of the finest quality (cryptographically secure)
+        
+        :return: None
+        """
         stuff = self.getInfo()
         if stuff == 'FUK':
             self.workLock = False
