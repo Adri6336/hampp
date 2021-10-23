@@ -144,7 +144,7 @@ class HamppGuiApp:
 
         cryptoList = self.cryptos
         size = len(cryptoList)
-        response = ''
+        response = ''  # This holds the string that will be pushed to the guidance window upon function end
 
         if howMany > size:
             response += 'You asked to select more cryptos than I know about. I\'ll choose 5 instead.\n'
@@ -192,8 +192,6 @@ class HamppGuiApp:
         where.delete('1.0', 'end')
         where.insert('0.0', text)
         where.config(state='disabled')  # Re-lock display
-
-
 
     def run(self):
         self.mainwindow.mainloop()
