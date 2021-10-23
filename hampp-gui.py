@@ -44,7 +44,7 @@ class HamppGuiApp:
         
         # Button that makes Hamster dispel wisdom
         self.wisdom_button = ttk.Button(self.frame1)
-        self.wisdom_button.configure(text='Recieve the Hamster\'s Wisdom')
+        self.wisdom_button.configure(text='Receive the Hamster\'s Wisdom')
         self.wisdom_button.place(anchor='nw', relwidth='0.94', relx='0.01', rely='0.42', width='0', x='0', y='0')
         self.wisdom_button.configure(command=lambda: self.workThread(op='teach'))
         
