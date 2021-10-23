@@ -3,6 +3,8 @@ Robotic hamster to give you financial advice.
 
 I am not liable for any advice that the hamster gives. Follow at your own peril.
 
+![hampp__](https://user-images.githubusercontent.com/64619524/138574580-0ef406fb-a4ce-4f26-9fa2-7f9f901d3296.png)
+
 ------------
 
 # Description
