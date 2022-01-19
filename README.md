@@ -16,3 +16,8 @@ opted to use a cryptographically secure PRNG to ensure the highest quality of ra
 bored and don't want to update hampp, there isn't a sell option in the robo-hamster's wisdom and it equally divides any investment amount you give it. 
 
 Have fun and remember: ***this is not financial advice***.
+
+# Updating
+
+I am not updating the crypto list actively. It was originally made to account for the tradable cryptos on Coinbase Pro, so you may want to edit the list if 
+you're using a different exchange or my list has not been updated recently. My web scraping skillz are still subpar, so I transcribe by hand; consequentially, I don't like to update it.
